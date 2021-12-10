@@ -1,0 +1,17 @@
+aws_region  = "eu-west-2"
+aws_account = "chips-backup"
+
+# shorthand
+account = "cbak"
+region  = "euw2"
+
+config_primary_region = true
+
+kms_customer_master_keys = {
+  s3chipsbackup = {
+    description = "S3 Chips backup key"
+    deletion_window_in_days = 30
+    enable_key_rotation = true
+    is_enabled = true
+  }
+}
