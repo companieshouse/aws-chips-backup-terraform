@@ -4,7 +4,9 @@ resource "vault_generic_secret" "kms" {
 
   data_json = <<EOT
 {
-  "chipsbackup-kms-key-arn": "${module.kms["chipsbackup"].key_arn}"
+  "hdev-chipsbackup-kms-key-arn": "${module.kms["chipsbackup"].key_arn}"
+  "hstg-chipsbackup-kms-key-arn": "${module.kms["chipsbackup"].key_arn}"
+  "hlive-chipsbackup-kms-key-arn": "${module.kms["chipsbackup"].key_arn}"
 }
 EOT
 }
