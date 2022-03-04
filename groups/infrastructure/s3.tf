@@ -37,11 +37,13 @@ module "heritage_development_chips_backup_bucket_policy" {
   bucket_name   = module.heritage_development_chips_backup_bucket.s3_bucket_id
   attach_policy = true
   bucket_read_accounts = [
+    local.account_ids["heritage-development"],
   ]
   bucket_write_accounts = [
     local.account_ids["heritage-development"],
   ]
   bucket_delete_accounts = [
+    local.account_ids["heritage-development"],
   ]
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
@@ -88,11 +90,13 @@ module "heritage_staging_chips_backup_bucket_policy" {
   bucket_name   = module.heritage_staging_chips_backup_bucket.s3_bucket_id
   attach_policy = true
   bucket_read_accounts = [
+    local.account_ids["heritage-staging"],
   ]
   bucket_write_accounts = [
     local.account_ids["heritage-staging"],
   ]
   bucket_delete_accounts = [
+    local.account_ids["heritage-staging"],
   ]
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
@@ -139,11 +143,13 @@ module "heritage_live_chips_backup_bucket_policy" {
   bucket_name   = module.heritage_live_chips_backup_bucket.s3_bucket_id
   attach_policy = true
   bucket_read_accounts = [
+    local.account_ids["heritage-live"],
   ]
   bucket_write_accounts = [
     local.account_ids["heritage-live"],
   ]
   bucket_delete_accounts = [
+    local.account_ids["heritage-live"],
   ]
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
