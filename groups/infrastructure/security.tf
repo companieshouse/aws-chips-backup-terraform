@@ -19,8 +19,12 @@ resource "aws_config_conformance_pack" "pci_dss" {
   template_s3_uri = "s3://${local.security_s3["config-bucket-id"]}/conformance_packs/Operational-Best-Practices-for-PCI-DSS-3.2.1-6b61077d8d3b984d89499fcc7e286b69.yaml"
 
   input_parameter {
-    parameter_name  = "AuthorizedVpcIds"
-    parameter_value = "" #Comma separated list as string e.g. "abc,def,ghi"
+    parameter_name  = "s3BucketPolicyGranteeCheckAwsPrincipals"
+    parameter_value = join(",", [
+      local.account_ids["heritage-development"],
+      local.account_ids["heritage-staging"],
+      local.account_ids["heritage-live"]
+    ]) #Comma separated list as string e.g. "abc,def,ghi"
   }
 
   depends_on = [module.config]
