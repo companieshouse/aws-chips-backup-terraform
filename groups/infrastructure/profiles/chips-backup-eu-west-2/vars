@@ -1,0 +1,8 @@
+aws_region  = "eu-west-2"
+aws_account = "chips-backup"
+
+# shorthand
+account = "cbak"
+region  = "euw2"
+
+config_primary_region = true

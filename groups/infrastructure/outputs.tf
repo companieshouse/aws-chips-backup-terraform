@@ -1,0 +1,12 @@
+
+resource "vault_generic_secret" "kms" {
+  path = "aws-accounts/${var.aws_account}/kms"
+
+  data_json = <<EOT
+{
+  "hdev-chipsbackup-kms-key-arn": "${module.kms["chipsbackup"].key_arn}"
+  "hstg-chipsbackup-kms-key-arn": "${module.kms["chipsbackup"].key_arn}"
+  "hlive-chipsbackup-kms-key-arn": "${module.kms["chipsbackup"].key_arn}"
+}
+EOT
+}
