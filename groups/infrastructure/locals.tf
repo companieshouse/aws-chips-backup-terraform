@@ -9,8 +9,6 @@ locals {
   s3_chips_backup_key      = module.kms["s3chipsbackup"]
   chips_backup_kms_key_arn = local.s3_chips_backup_key.key_arn
 
-  internal_fqdn = "${var.aws_account}.${var.aws_region}.ch.gov.uk"
-
   cloudtrail_prefix    = "cloudtrail-logs"
   vpc_flow_logs_prefix = "flow-logs"
 
