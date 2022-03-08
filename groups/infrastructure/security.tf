@@ -20,7 +20,7 @@ resource "aws_config_conformance_pack" "pci_dss" {
 
   input_parameter {
     parameter_name  = "AuthorizedVpcIds"
-    parameter_value = [] #Comma separated list as string
+    parameter_value = "" #Comma separated list as string e.g. "abc,def,ghi"
   }
 
   depends_on = [module.config]
