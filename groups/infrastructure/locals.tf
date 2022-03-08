@@ -9,7 +9,12 @@ locals {
   s3_chips_backup_key      = module.kms["s3chipsbackup"]
   chips_backup_kms_key_arn = local.s3_chips_backup_key.key_arn
 
-  internal_fqdn = format("%s.%s.${var.private_domain}", split("-", var.aws_account)[1], split("-", var.aws_account)[0])
+  internal_fqdn = "${var.aws_account}.${var.aws_region}.ch.gov.uk"
+
+  cloudtrail_prefix    = "cloudtrail-logs"
+  vpc_flow_logs_prefix = "flow-logs"
+
+  internal_fqdn = "${var.aws_account}.${var.private_domain}"
 
   default_tags = {
     Terraform = "true"

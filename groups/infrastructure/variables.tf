@@ -41,3 +41,9 @@ variable "config_primary_region" {
   type        = bool
   default     = false
 }
+
+variable "private_domain" {
+  description = "The suffix for the private domain name to be used for route53 zones"
+  type        = string
+  default     = "aws.internal"
+}
