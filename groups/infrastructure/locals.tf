@@ -23,21 +23,21 @@ locals {
       deletion_window_in_days       = 30
       enable_key_rotation           = true
       is_enabled                    = true
-      key_usage_foreign_account_ids = local.account_ids["heritage-development"]
+      key_usage_foreign_account_ids = [local.account_ids["heritage-development"]]
     },
     hstgs3chipsbackup = {
       description                   = "S3 Chips backup key"
       deletion_window_in_days       = 30
       enable_key_rotation           = true
       is_enabled                    = true
-      key_usage_foreign_account_ids = local.account_ids["heritage-staging"]
+      key_usage_foreign_account_ids = [local.account_ids["heritage-staging"]]
     },
     hlives3chipsbackup = {
       description                   = "S3 Chips backup key"
       deletion_window_in_days       = 30
       enable_key_rotation           = true
       is_enabled                    = true
-      key_usage_foreign_account_ids = local.account_ids["heritage-live"]
+      key_usage_foreign_account_ids = [local.account_ids["heritage-live"]]
     }
   }
 }
