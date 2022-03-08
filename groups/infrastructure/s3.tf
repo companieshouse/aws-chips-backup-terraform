@@ -24,7 +24,7 @@ module "heritage_development_chips_backup_bucket" {
   server_side_encryption_configuration = {
     rule = {
       apply_server_side_encryption_by_default = {
-        kms_master_key_id = local.chips_backup_kms_key_arn
+        kms_master_key_id = module.kms["hdevs3chipsbackup"].key_arn
         sse_algorithm     = "aws:kms"
       }
     }
@@ -77,7 +77,7 @@ module "heritage_staging_chips_backup_bucket" {
   server_side_encryption_configuration = {
     rule = {
       apply_server_side_encryption_by_default = {
-        kms_master_key_id = local.chips_backup_kms_key_arn
+        kms_master_key_id = module.kms["hstgs3chipsbackup"].key_arn
         sse_algorithm     = "aws:kms"
       }
     }
@@ -130,7 +130,7 @@ module "heritage_live_chips_backup_bucket" {
   server_side_encryption_configuration = {
     rule = {
       apply_server_side_encryption_by_default = {
-        kms_master_key_id = local.chips_backup_kms_key_arn
+        kms_master_key_id = module.kms["hlives3chipsbackup"].key_arn
         sse_algorithm     = "aws:kms"
       }
     }
