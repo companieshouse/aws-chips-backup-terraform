@@ -35,7 +35,7 @@ module "cloudtrail" {
 
   kms_key = local.security_kms["cloudtrail-kms-key-arn"]
 
-  event_selectors = [
+  event_selector = [
     {
       read_write_type           = "All"
       include_management_events = true
