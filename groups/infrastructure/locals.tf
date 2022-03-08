@@ -6,9 +6,6 @@ locals {
   security_s3  = data.vault_generic_secret.security_s3.data
   security_kms = data.vault_generic_secret.security_kms.data
 
-  s3_chips_backup_key      = module.kms["s3chipsbackup"]
-  chips_backup_kms_key_arn = local.s3_chips_backup_key.key_arn
-
   cloudtrail_prefix    = "cloudtrail-logs"
   vpc_flow_logs_prefix = "flow-logs"
 
@@ -27,14 +24,14 @@ locals {
       enable_key_rotation           = true
       is_enabled                    = true
       key_usage_foreign_account_ids = local.account_ids["heritage-development"]
-    }
+    },
     hstgs3chipsbackup = {
       description                   = "S3 Chips backup key"
       deletion_window_in_days       = 30
       enable_key_rotation           = true
       is_enabled                    = true
       key_usage_foreign_account_ids = local.account_ids["heritage-staging"]
-    }
+    },
     hlives3chipsbackup = {
       description                   = "S3 Chips backup key"
       deletion_window_in_days       = 30

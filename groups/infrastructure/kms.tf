@@ -1,6 +1,6 @@
 
 module "kms" {
-  for_each = var.kms_customer_master_keys
+  for_each = local.kms_customer_master_keys
 
   source                  = "git@github.com:companieshouse/terraform-modules//aws/kms?ref=tags/1.0.56"
   kms_key_alias           = "${var.account}/${var.region}/${each.key}"
