@@ -23,11 +23,11 @@
 | <a name="module_cloudtrail"></a> [cloudtrail](#module\_cloudtrail) | git@github.com:companieshouse/terraform-modules//aws/cloudtrail?ref=tags/1.0.99 |  |
 | <a name="module_config"></a> [config](#module\_config) | git@github.com:companieshouse/terraform-modules//aws/config?ref=tags/1.0.63 |  |
 | <a name="module_heritage_development_chips_backup_bucket"></a> [heritage\_development\_chips\_backup\_bucket](#module\_heritage\_development\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_development_chips_backup_bucket_policy"></a> [heritage\_development\_chips\_backup\_bucket\_policy](#module\_heritage\_development\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.99 |  |
+| <a name="module_heritage_development_chips_backup_bucket_policy"></a> [heritage\_development\_chips\_backup\_bucket\_policy](#module\_heritage\_development\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114 |  |
 | <a name="module_heritage_live_chips_backup_bucket"></a> [heritage\_live\_chips\_backup\_bucket](#module\_heritage\_live\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_live_chips_backup_bucket_policy"></a> [heritage\_live\_chips\_backup\_bucket\_policy](#module\_heritage\_live\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.99 |  |
+| <a name="module_heritage_live_chips_backup_bucket_policy"></a> [heritage\_live\_chips\_backup\_bucket\_policy](#module\_heritage\_live\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114 |  |
 | <a name="module_heritage_staging_chips_backup_bucket"></a> [heritage\_staging\_chips\_backup\_bucket](#module\_heritage\_staging\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_staging_chips_backup_bucket_policy"></a> [heritage\_staging\_chips\_backup\_bucket\_policy](#module\_heritage\_staging\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.99 |  |
+| <a name="module_heritage_staging_chips_backup_bucket_policy"></a> [heritage\_staging\_chips\_backup\_bucket\_policy](#module\_heritage\_staging\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114 |  |
 | <a name="module_kms"></a> [kms](#module\_kms) | git@github.com:companieshouse/terraform-modules//aws/kms?ref=tags/1.0.56 |  |
 
 ## Resources
@@ -50,6 +50,7 @@
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region in which resources will be administered | `string` | n/a | yes |
 | <a name="input_config_primary_region"></a> [config\_primary\_region](#input\_config\_primary\_region) | AWS config has options to collect and apply both regional and global collection, this is used to ensure global objects are only collected in a single region to avoid duplication. | `bool` | `false` | no |
 | <a name="input_kms_customer_master_keys"></a> [kms\_customer\_master\_keys](#input\_kms\_customer\_master\_keys) | Map of KMS customer master keys and key policies to be created | `map` | `{}` | no |
+| <a name="input_private_domain"></a> [private\_domain](#input\_private\_domain) | The suffix for the private domain name to be used for route53 zones | `string` | `"aws.internal"` | no |
 | <a name="input_region"></a> [region](#input\_region) | The shorthand for the AWS region | `string` | n/a | yes |
 | <a name="input_vault_password"></a> [vault\_password](#input\_vault\_password) | Password for connecting to Vault | `string` | n/a | yes |
 | <a name="input_vault_username"></a> [vault\_username](#input\_vault\_username) | Username for connecting to Vault | `string` | n/a | yes |
