@@ -32,7 +32,7 @@ module "heritage_development_chips_backup_bucket" {
 }
 
 module "heritage_development_chips_backup_bucket_policy" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114"
+  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
   bucket_name   = module.heritage_development_chips_backup_bucket.s3_bucket_id
   attach_policy = true
@@ -45,6 +45,7 @@ module "heritage_development_chips_backup_bucket_policy" {
   bucket_delete_accounts = [
     local.account_ids["heritage-development"],
   ]
+  s3_bucket_ownership_control = "BucketOwnerEnforced"
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
   depends_on = [module.heritage_development_chips_backup_bucket]
@@ -85,7 +86,7 @@ module "heritage_staging_chips_backup_bucket" {
 }
 
 module "heritage_staging_chips_backup_bucket_policy" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114"
+  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
   bucket_name   = module.heritage_staging_chips_backup_bucket.s3_bucket_id
   attach_policy = true
@@ -98,6 +99,7 @@ module "heritage_staging_chips_backup_bucket_policy" {
   bucket_delete_accounts = [
     local.account_ids["heritage-staging"],
   ]
+  s3_bucket_ownership_control = "BucketOwnerEnforced"
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
   depends_on = [module.heritage_staging_chips_backup_bucket]
@@ -138,7 +140,7 @@ module "heritage_live_chips_backup_bucket" {
 }
 
 module "heritage_live_chips_backup_bucket_policy" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114"
+  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
   bucket_name   = module.heritage_live_chips_backup_bucket.s3_bucket_id
   attach_policy = true
@@ -151,6 +153,7 @@ module "heritage_live_chips_backup_bucket_policy" {
   bucket_delete_accounts = [
     local.account_ids["heritage-live"],
   ]
+  s3_bucket_ownership_control = "BucketOwnerEnforced"
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
   depends_on = [module.heritage_live_chips_backup_bucket]
