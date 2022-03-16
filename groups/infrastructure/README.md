@@ -23,11 +23,11 @@
 | <a name="module_cloudtrail"></a> [cloudtrail](#module\_cloudtrail) | git@github.com:companieshouse/terraform-modules//aws/cloudtrail?ref=tags/1.0.99 |  |
 | <a name="module_config"></a> [config](#module\_config) | git@github.com:companieshouse/terraform-modules//aws/config?ref=tags/1.0.63 |  |
 | <a name="module_heritage_development_chips_backup_bucket"></a> [heritage\_development\_chips\_backup\_bucket](#module\_heritage\_development\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_development_chips_backup_bucket_policy"></a> [heritage\_development\_chips\_backup\_bucket\_policy](#module\_heritage\_development\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114 |  |
+| <a name="module_heritage_development_chips_backup_bucket_policy"></a> [heritage\_development\_chips\_backup\_bucket\_policy](#module\_heritage\_development\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115 |  |
 | <a name="module_heritage_live_chips_backup_bucket"></a> [heritage\_live\_chips\_backup\_bucket](#module\_heritage\_live\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_live_chips_backup_bucket_policy"></a> [heritage\_live\_chips\_backup\_bucket\_policy](#module\_heritage\_live\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114 |  |
+| <a name="module_heritage_live_chips_backup_bucket_policy"></a> [heritage\_live\_chips\_backup\_bucket\_policy](#module\_heritage\_live\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115 |  |
 | <a name="module_heritage_staging_chips_backup_bucket"></a> [heritage\_staging\_chips\_backup\_bucket](#module\_heritage\_staging\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_staging_chips_backup_bucket_policy"></a> [heritage\_staging\_chips\_backup\_bucket\_policy](#module\_heritage\_staging\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.114 |  |
+| <a name="module_heritage_staging_chips_backup_bucket_policy"></a> [heritage\_staging\_chips\_backup\_bucket\_policy](#module\_heritage\_staging\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115 |  |
 | <a name="module_kms"></a> [kms](#module\_kms) | git@github.com:companieshouse/terraform-modules//aws/kms?ref=tags/1.0.56 |  |
 
 ## Resources
