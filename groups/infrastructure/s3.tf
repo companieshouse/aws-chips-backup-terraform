@@ -48,7 +48,7 @@ module "heritage_development_chips_backup_policy" {
   s3_bucket_ownership_control = "BucketOwnerEnforced"
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
-  depends_on = [module.heritage_development_chips_backup_bucket]
+  depends_on = [module.heritage_development_chips_backup]
 }
 
 
@@ -102,7 +102,7 @@ module "heritage_staging_chips_backup_policy" {
   s3_bucket_ownership_control = "BucketOwnerEnforced"
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
-  depends_on = [module.heritage_staging_chips_backup_bucket]
+  depends_on = [module.heritage_staging_chips_backup]
 }
 
 
@@ -156,5 +156,5 @@ module "heritage_live_chips_backup_policy" {
   s3_bucket_ownership_control = "BucketOwnerEnforced"
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
-  depends_on = [module.heritage_live_chips_backup_bucket]
+  depends_on = [module.heritage_live_chips_backup]
 }
