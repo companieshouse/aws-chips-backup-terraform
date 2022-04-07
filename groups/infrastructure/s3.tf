@@ -1,7 +1,7 @@
 ###################################
 # Heritage-development resources 
 ###################################
-module "heritage_development_chips_backup {
+module "heritage_development_chips_backup" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "2.11.1"
 
