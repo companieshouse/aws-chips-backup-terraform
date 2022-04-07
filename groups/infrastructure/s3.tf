@@ -34,7 +34,7 @@ module "heritage_development_chips_backup" {
 module "heritage_development_chips_backup_policy" {
   source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
-  bucket_name   = module.heritage_development_chips_backup_bucket.s3_bucket_id
+  bucket_name   = module.heritage_development_chips_backup.s3_bucket_id
   attach_policy = true
   bucket_read_accounts = [
     local.account_ids["heritage-development"],
@@ -88,7 +88,7 @@ module "heritage_staging_chips_backup" {
 module "heritage_staging_chips_backup_policy" {
   source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
-  bucket_name   = module.heritage_staging_chips_backup_bucket.s3_bucket_id
+  bucket_name   = module.heritage_staging_chips_backup.s3_bucket_id
   attach_policy = true
   bucket_read_accounts = [
     local.account_ids["heritage-staging"],
@@ -142,7 +142,7 @@ module "heritage_live_chips_backup" {
 module "heritage_live_chips_backup_policy" {
   source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
-  bucket_name   = module.heritage_live_chips_backup_bucket.s3_bucket_id
+  bucket_name   = module.heritage_live_chips_backup.s3_bucket_id
   attach_policy = true
   bucket_read_accounts = [
     local.account_ids["heritage-live"],
