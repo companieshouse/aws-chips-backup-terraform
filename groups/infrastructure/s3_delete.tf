@@ -1,11 +1,11 @@
 ###################################
 # Heritage-development resources 
 ###################################
-module "heritage_development_chips_backup {
+module "heritage_development_chips_backup_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "2.11.1"
 
-  bucket = "heritage-dev-chips-backup-${var.aws_account}-${var.aws_region}"
+  bucket = "heritage-dev-chips-backup.${var.aws_account}.${var.aws_region}"
   acl    = "private"
 
   block_public_acls       = true
@@ -18,7 +18,7 @@ module "heritage_development_chips_backup {
   }
 
   # lifecycle_rule = [
-  #   #Long term cold zbackup, we should have data lifecycle/tiering
+  #   #Long term cold backup, we should have data lifecycle/tiering
   # ]
 
   server_side_encryption_configuration = {
@@ -31,7 +31,7 @@ module "heritage_development_chips_backup {
   }
 }
 
-module "heritage_development_chips_backup_policy" {
+module "heritage_development_chips_backup_bucket_policy" {
   source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
   bucket_name   = module.heritage_development_chips_backup_bucket.s3_bucket_id
@@ -55,11 +55,11 @@ module "heritage_development_chips_backup_policy" {
 ###################################
 # Heritage-staging resources 
 ###################################
-module "heritage_staging_chips_backup" {
+module "heritage_staging_chips_backup_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "2.11.1"
 
-  bucket = "heritage-staging-chips-backup-${var.aws_account}-${var.aws_region}"
+  bucket = "heritage-staging-chips-backup.${var.aws_account}.${var.aws_region}"
   acl    = "private"
 
   block_public_acls       = true
@@ -85,7 +85,7 @@ module "heritage_staging_chips_backup" {
   }
 }
 
-module "heritage_staging_chips_backup_policy" {
+module "heritage_staging_chips_backup_bucket_policy" {
   source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
   bucket_name   = module.heritage_staging_chips_backup_bucket.s3_bucket_id
@@ -109,11 +109,11 @@ module "heritage_staging_chips_backup_policy" {
 ###################################
 # Heritage-live resources 
 ###################################
-module "heritage_live_chips_backup" {
+module "heritage_live_chips_backup_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "2.11.1"
 
-  bucket = "heritage-live-chips-backup-${var.aws_account}-${var.aws_region}"
+  bucket = "heritage-live-chips-backup.${var.aws_account}.${var.aws_region}"
   acl    = "private"
 
   block_public_acls       = true
@@ -139,7 +139,7 @@ module "heritage_live_chips_backup" {
   }
 }
 
-module "heritage_live_chips_backup_policy" {
+module "heritage_live_chips_backup_bucket_policy" {
   source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
 
   bucket_name   = module.heritage_live_chips_backup_bucket.s3_bucket_id
