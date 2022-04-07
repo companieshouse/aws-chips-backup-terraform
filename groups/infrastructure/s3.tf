@@ -5,7 +5,7 @@ module "heritage_development_chips_backup_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "2.11.1"
 
-  bucket = "heritage-dev-chips-backup.${var.aws_account}.${var.aws_region}"
+  bucket = "heritage-dev-chips-backup-${var.aws_account}-${var.aws_region}"
   acl    = "private"
 
   block_public_acls       = true
@@ -59,7 +59,7 @@ module "heritage_staging_chips_backup_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "2.11.1"
 
-  bucket = "heritage-staging-chips-backup.${var.aws_account}.${var.aws_region}"
+  bucket = "heritage-staging-chips-backup-${var.aws_account}-${var.aws_region}"
   acl    = "private"
 
   block_public_acls       = true
@@ -113,7 +113,7 @@ module "heritage_live_chips_backup_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "2.11.1"
 
-  bucket = "heritage-live-chips-backup.${var.aws_account}.${var.aws_region}"
+  bucket = "heritage-live-chips-backup-${var.aws_account}-${var.aws_region}"
   acl    = "private"
 
   block_public_acls       = true
