@@ -17,6 +17,12 @@ locals {
     Region    = var.aws_region
   }
 
+  db_names = [
+    "chips-oltp",
+    "chips-rep",
+    "staffware"
+  ]
+
   kms_customer_master_keys = {
     hdevs3chipsbackup = {
       description                   = "S3 Chips backup key"
