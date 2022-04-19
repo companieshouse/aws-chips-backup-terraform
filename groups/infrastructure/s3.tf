@@ -7,7 +7,8 @@ module "heritage_development_chips_backup" {
 
   for_each = toset(local.db_names)
 
-  bucket = "heritage-dev-${each.value}-backup-${var.aws_account}-${var.aws_region}"
+  bucket = "hdev-${each.value}-backup-${var.aws_account}-${var.aws_region}"
+
   acl    = "private"
 
   block_public_acls       = true
@@ -63,7 +64,7 @@ module "heritage_staging_chips_backup" {
 
   for_each = toset(local.db_names)
 
-  bucket = "heritage-staging-${each.value}-backup-${var.aws_account}-${var.aws_region}"
+  bucket = "hstg-${each.value}-backup-${var.aws_account}-${var.aws_region}"
   acl    = "private"
 
   block_public_acls       = true
@@ -119,7 +120,7 @@ module "heritage_live_chips_backup" {
 
   for_each = toset(local.db_names)
 
-  bucket = "heritage-live-${each.value}-backup-${var.aws_account}-${var.aws_region}"
+  bucket = "hlive-${each.value}-backup-${var.aws_account}-${var.aws_region}"
   acl    = "private"
 
   block_public_acls       = true
