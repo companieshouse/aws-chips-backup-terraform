@@ -17,14 +17,13 @@ locals {
     Region    = var.aws_region
   }
 
+  db_names = [
+    "chips-oltp",
+    "chips-rep",
+    "staffware"
+  ]
+
   kms_customer_master_keys = {
-    hdevs3chipsbackup = {
-      description                   = "S3 Chips backup key"
-      deletion_window_in_days       = 30
-      enable_key_rotation           = true
-      is_enabled                    = true
-      key_usage_foreign_account_ids = [local.account_ids["heritage-development"]]
-    },
     hstgs3chipsbackup = {
       description                   = "S3 Chips backup key"
       deletion_window_in_days       = 30
