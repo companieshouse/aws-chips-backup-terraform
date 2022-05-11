@@ -22,12 +22,10 @@
 |------|--------|---------|
 | <a name="module_cloudtrail"></a> [cloudtrail](#module\_cloudtrail) | git@github.com:companieshouse/terraform-modules//aws/cloudtrail?ref=tags/1.0.99 |  |
 | <a name="module_config"></a> [config](#module\_config) | git@github.com:companieshouse/terraform-modules//aws/config?ref=tags/1.0.63 |  |
-| <a name="module_heritage_development_chips_backup_bucket"></a> [heritage\_development\_chips\_backup\_bucket](#module\_heritage\_development\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_development_chips_backup_bucket_policy"></a> [heritage\_development\_chips\_backup\_bucket\_policy](#module\_heritage\_development\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115 |  |
-| <a name="module_heritage_live_chips_backup_bucket"></a> [heritage\_live\_chips\_backup\_bucket](#module\_heritage\_live\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_live_chips_backup_bucket_policy"></a> [heritage\_live\_chips\_backup\_bucket\_policy](#module\_heritage\_live\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115 |  |
-| <a name="module_heritage_staging_chips_backup_bucket"></a> [heritage\_staging\_chips\_backup\_bucket](#module\_heritage\_staging\_chips\_backup\_bucket) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_staging_chips_backup_bucket_policy"></a> [heritage\_staging\_chips\_backup\_bucket\_policy](#module\_heritage\_staging\_chips\_backup\_bucket\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115 |  |
+| <a name="module_heritage_live_chips_backup"></a> [heritage\_live\_chips\_backup](#module\_heritage\_live\_chips\_backup) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
+| <a name="module_heritage_live_chips_backup_policy"></a> [heritage\_live\_chips\_backup\_policy](#module\_heritage\_live\_chips\_backup\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115 |  |
+| <a name="module_heritage_staging_chips_backup"></a> [heritage\_staging\_chips\_backup](#module\_heritage\_staging\_chips\_backup) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
+| <a name="module_heritage_staging_chips_backup_policy"></a> [heritage\_staging\_chips\_backup\_policy](#module\_heritage\_staging\_chips\_backup\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115 |  |
 | <a name="module_kms"></a> [kms](#module\_kms) | git@github.com:companieshouse/terraform-modules//aws/kms?ref=tags/1.0.56 |  |
 
 ## Resources
@@ -35,8 +33,12 @@
 | Name | Type |
 |------|------|
 | [aws_config_conformance_pack.pci_dss](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/config_conformance_pack) | resource |
+| [aws_s3_bucket_policy.allow_access_from_heritage_live](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
+| [aws_s3_bucket_policy.allow_access_from_heritage_staging](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
 | [aws_ssm_document.session_manager_settings](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_document) | resource |
 | [vault_generic_secret.kms](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/resources/generic_secret) | resource |
+| [aws_iam_policy_document.allow_access_from_heritage_live](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.allow_access_from_heritage_staging](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [vault_generic_secret.account_ids](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |
 | [vault_generic_secret.security_kms](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |
 | [vault_generic_secret.security_s3](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |

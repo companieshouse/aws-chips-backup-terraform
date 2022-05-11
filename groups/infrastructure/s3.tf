@@ -55,7 +55,6 @@ module "heritage_staging_chips_backup_policy" {
   depends_on = [module.heritage_staging_chips_backup]
 }
 
-
 ###################################
 # Heritage-live resources 
 ###################################

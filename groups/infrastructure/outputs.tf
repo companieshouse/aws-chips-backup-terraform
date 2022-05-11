@@ -1,4 +1,3 @@
-
 resource "vault_generic_secret" "kms" {
   path = "aws-accounts/${var.aws_account}/kms"
 
@@ -7,3 +6,4 @@ resource "vault_generic_secret" "kms" {
     hlive-chipsbackup-kms-key-arn = module.kms["hlives3chipsbackup"].key_arn
   })
 }
+
