@@ -2,7 +2,7 @@ resource "aws_s3_bucket_policy" "allow_access_from_heritage_staging" {
   for_each = toset(local.db_names)
 
   bucket = module.heritage_staging_chips_backup[each.value].s3_bucket_id
-  policy = data.aws_iam_policy_document.allow_access_from_heritage_staging.json
+  policy = data.aws_iam_policy_document.allow_access_from_heritage_staging[each.value].json
 }
 
 data "aws_iam_policy_document" "allow_access_from_heritage_staging" {
@@ -46,7 +46,7 @@ resource "aws_s3_bucket_policy" "allow_access_from_heritage_live" {
   for_each = toset(local.db_names)
 
   bucket = module.heritage_live_chips_backup[each.value].s3_bucket_id
-  policy = data.aws_iam_policy_document.allow_access_from_heritage_live.json
+  policy = data.aws_iam_policy_document.allow_access_from_heritage_live[each.value].json
 }
 
 data "aws_iam_policy_document" "allow_access_from_heritage_live" {
