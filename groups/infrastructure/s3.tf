@@ -67,7 +67,7 @@ module "heritage_staging_chips_backup_policy" {
       ]
 
       resources = [
-        "${module.heritage_staging_chips_backup[each.value].s3_bucket_arn}/*"
+        "arn:aws:s3:::${module.heritage_staging_chips_backup[each.value].s3_bucket_id}/*",
       ]
     },
     {
@@ -86,7 +86,7 @@ module "heritage_staging_chips_backup_policy" {
       ]
 
       resources = [
-        module.heritage_staging_chips_backup[each.value].s3_bucket_arn
+        "arn:aws:s3:::${module.heritage_staging_chips_backup[each.value].s3_bucket_id}"
       ]
     },
     {
@@ -103,8 +103,8 @@ module "heritage_staging_chips_backup_policy" {
       ]
 
       resources = [
-        module.heritage_live_chips_backup[each.value].s3_bucket_arn,
-        "${module.heritage_live_chips_backup[each.value].s3_bucket_arn}/*"
+        "arn:aws:s3:::${module.heritage_staging_chips_backup[each.value].s3_bucket_id}",
+        "arn:aws:s3:::${module.heritage_staging_chips_backup[each.value].s3_bucket_id}/*",
       ]
     }
   ]
@@ -183,7 +183,7 @@ module "heritage_live_chips_backup_policy" {
       ]
 
       resources = [
-        "${module.heritage_live_chips_backup[each.value].s3_bucket_arn}/*"
+        "arn:aws:s3:::${module.heritage_live_chips_backup[each.value].s3_bucket_id}/*"
       ]
     },
     {
@@ -202,7 +202,7 @@ module "heritage_live_chips_backup_policy" {
       ]
 
       resources = [
-        module.heritage_live_chips_backup[each.value].s3_bucket_arn
+        "arn:aws:s3:::${module.heritage_live_chips_backup[each.value].s3_bucket_id}"
       ]
     },
     {
@@ -219,8 +219,8 @@ module "heritage_live_chips_backup_policy" {
       ]
 
       resources = [
-        module.heritage_live_chips_backup[each.value].s3_bucket_arn,
-        "${module.heritage_live_chips_backup[each.value].s3_bucket_arn}/*"
+        "arn:aws:s3:::${module.heritage_live_chips_backup[each.value].s3_bucket_id}",
+        "arn:aws:s3:::${module.heritage_live_chips_backup[each.value].s3_bucket_id}/*",
       ]
     }
   ]
