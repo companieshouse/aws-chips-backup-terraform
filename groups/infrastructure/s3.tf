@@ -34,7 +34,7 @@ module "heritage_staging_chips_backup" {
 }
 
 module "heritage_staging_chips_backup_policy" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
+  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.136"
 
   for_each = toset(local.db_names)
 
@@ -91,7 +91,7 @@ module "heritage_live_chips_backup" {
 }
 
 module "heritage_live_chips_backup_policy" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.115"
+  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.136"
 
   for_each = toset(local.db_names)
 
@@ -107,6 +107,28 @@ module "heritage_live_chips_backup_policy" {
     local.account_ids["heritage-live"],
   ]
   s3_bucket_ownership_control = "BucketOwnerEnforced"
+
+
+  custom_statements = [
+    {
+      sid    = "DenyEverythingDeleteVersion"
+      effect = "Deny"
+
+      principals = [{
+        type        = "*"
+        identifiers = ["*"]
+      }]
+
+      actions = [
+        "s3:DeleteObjectVersion"
+      ]
+
+      resources = [
+        module.heritage_live_chips_backup[each.value].s3_bucket_arn,
+        "${module.heritage_live_chips_backup[each.value].s3_bucket_arn}/*"
+      ]
+    }
+  ]
 
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
   depends_on = [module.heritage_live_chips_backup]
