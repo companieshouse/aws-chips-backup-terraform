@@ -34,7 +34,7 @@ module "heritage_staging_chips_backup" {
 }
 
 module "heritage_staging_chips_backup_policy" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.136"
+  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.137"
 
   for_each = toset(local.db_names)
 
@@ -91,7 +91,7 @@ module "heritage_live_chips_backup" {
 }
 
 module "heritage_live_chips_backup_policy" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.136"
+  source = "git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.137"
 
   for_each = toset(local.db_names)
 
