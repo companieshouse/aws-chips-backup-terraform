@@ -51,6 +51,64 @@ module "heritage_staging_chips_backup_policy" {
   ]
   s3_bucket_ownership_control = "BucketOwnerEnforced"
 
+  custom_statements = [
+    {
+      sid    = "ReplicationPermissions"
+      effect = "Allow"
+
+      principals = [{
+        type        = "AWS"
+        identifiers = [local.account_ids["heritage-staging"]]
+      }]
+
+      actions = [
+        "s3:ReplicateObject",
+        "s3:ReplicateDelete",
+      ]
+
+      resources = [
+        "${module.heritage_staging_chips_backup[each.value].s3_bucket_arn}/*"
+      ]
+    },
+    {
+      sid    = "VersionPermissions"
+      effect = "Allow"
+
+      principals = [{
+        type        = "AWS"
+        identifiers = [local.account_ids["heritage-staging"]]
+      }]
+
+      actions = [
+        "s3:List*",
+        "s3:GetBucketVersioning",
+        "s3:PutBucketVersioning"
+      ]
+
+      resources = [
+        module.heritage_staging_chips_backup[each.value].s3_bucket_arn
+      ]
+    },
+    {
+      sid    = "DenyEverythingDeleteVersion"
+      effect = "Deny"
+
+      principals = [{
+        type        = "*"
+        identifiers = ["*"]
+      }]
+
+      actions = [
+        "s3:DeleteObjectVersion"
+      ]
+
+      resources = [
+        module.heritage_live_chips_backup[each.value].s3_bucket_arn,
+        "${module.heritage_live_chips_backup[each.value].s3_bucket_arn}/*"
+      ]
+    }
+  ]
+
   // Depends on to avoid issues with conflicting operations adding bucket policy and public bock resources
   depends_on = [module.heritage_staging_chips_backup]
 }
@@ -110,6 +168,43 @@ module "heritage_live_chips_backup_policy" {
 
 
   custom_statements = [
+    {
+      sid    = "ReplicationPermissions"
+      effect = "Allow"
+
+      principals = [{
+        type        = "AWS"
+        identifiers = [local.account_ids["heritage-live"]]
+      }]
+
+      actions = [
+        "s3:ReplicateObject",
+        "s3:ReplicateDelete",
+      ]
+
+      resources = [
+        "${module.heritage_live_chips_backup[each.value].s3_bucket_arn}/*"
+      ]
+    },
+    {
+      sid    = "VersionPermissions"
+      effect = "Allow"
+
+      principals = [{
+        type        = "AWS"
+        identifiers = [local.account_ids["heritage-live"]]
+      }]
+
+      actions = [
+        "s3:List*",
+        "s3:GetBucketVersioning",
+        "s3:PutBucketVersioning"
+      ]
+
+      resources = [
+        module.heritage_live_chips_backup[each.value].s3_bucket_arn
+      ]
+    },
     {
       sid    = "DenyEverythingDeleteVersion"
       effect = "Deny"
