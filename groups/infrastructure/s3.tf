@@ -149,9 +149,24 @@ module "heritage_live_chips_backup" {
     enabled = true
   }
 
-  # lifecycle_rule = [
-  #   #Long term cold backup, we should have data lifecycle/tiering
-  # ]
+  lifecycle_rule = [
+    {
+      id                                     = "VersionsManagement"
+      enabled                                = true
+      abort_incomplete_multipart_upload_days = 7
+
+      noncurrent_version_transition = [
+        {
+          days          = 30
+          storage_class = "STANDARD_IA"
+        }
+      ]
+
+      noncurrent_version_expiration = {
+        days = 60
+      }
+    }
+  ]
 
   server_side_encryption_configuration = {
     rule = {
