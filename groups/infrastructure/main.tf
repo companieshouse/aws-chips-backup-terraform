@@ -29,3 +29,11 @@ provider "vault" {
     }
   }
 }
+
+####################################################################################################
+## IAM Password Policy
+####################################################################################################
+
+module "iam_password_policy" {
+  source = "git@github.com:companieshouse/terraform-modules//aws/iam_password_policy?ref=tags/1.0.247"
+}
