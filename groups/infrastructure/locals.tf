@@ -9,6 +9,8 @@ locals {
   cloudtrail_prefix    = "cloudtrail-logs"
   vpc_flow_logs_prefix = "flow-logs"
 
+  cloudwatch_log_group_for_cloudtrail = "/cloudtrail/${var.aws_account}-${var.region}"
+
   internal_fqdn = "${var.aws_account}.${var.private_domain}"
 
   default_tags = {

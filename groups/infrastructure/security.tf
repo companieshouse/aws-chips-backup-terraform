@@ -28,6 +28,9 @@ module "cloudtrail" {
   s3_bucket_name = local.security_s3["cloudtrail-bucket-name"]
   s3_key_prefix  = local.cloudtrail_prefix
 
+  cloudwatch_logging        = true
+  cloudwatch_log_group_name = local.cloudwatch_log_group_for_cloudtrail
+
   kms_key = local.security_kms["cloudtrail-kms-key-arn"]
 
   event_selector = [
