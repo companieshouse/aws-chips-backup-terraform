@@ -1,8 +1,7 @@
-
 module "kms" {
   for_each = local.kms_customer_master_keys
 
-  source                  = "git@github.com:companieshouse/terraform-modules//aws/kms?ref=tags/1.0.56"
+  source                  = "git@github.com:companieshouse/terraform-modules//aws/kms?ref=tags/1.0.267"
   kms_key_alias           = "${var.account}/${var.region}/${each.key}"
   description             = lookup(each.value, "description", "${var.account}/${var.region}/${each.key}")
   deletion_window_in_days = lookup(each.value, "deletion_window_in_days", 30)
@@ -18,9 +17,9 @@ module "kms" {
 
   tags = merge(
     local.default_tags,
-    map(
-      "Account", var.aws_account,
-      "ServiceTeam", "Platform"
-    )
+    {
+      "Account" = var.aws_account,
+      "ServiceTeam" = "Platform"
+    }
   )
 }

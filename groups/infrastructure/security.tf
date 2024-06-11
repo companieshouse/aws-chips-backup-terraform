@@ -1,5 +1,5 @@
 module "config" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/config?ref=tags/1.0.63"
+  source = "git@github.com:companieshouse/terraform-modules//aws/config?ref=tags/1.0.267"
 
   name = "${var.account}-conf"
 
@@ -22,7 +22,7 @@ resource "aws_config_conformance_pack" "pci_dss" {
 }
 
 module "cloudtrail" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/cloudtrail?ref=tags/1.0.99"
+  source = "git@github.com:companieshouse/terraform-modules//aws/cloudtrail?ref=tags/1.0.267"
 
   trail_name     = "ct-${var.aws_account}-${var.region}-001"
   s3_bucket_name = local.security_s3["cloudtrail-bucket-name"]
