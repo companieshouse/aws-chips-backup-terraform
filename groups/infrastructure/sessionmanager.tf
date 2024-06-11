@@ -38,7 +38,7 @@ DOC
   tags = merge(
     local.default_tags,
     {
-      "Account" = var.aws_account,
+      "Account"     = var.aws_account,
       "ServiceTeam" = "Network"
     }
   )
