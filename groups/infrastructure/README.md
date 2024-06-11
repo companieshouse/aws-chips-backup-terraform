@@ -5,28 +5,30 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0, < 0.14 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 0.3, < 4.0 |
-| <a name="requirement_vault"></a> [vault](#requirement\_vault) | >= 2.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3, < 2.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0, < 6.0 |
+| <a name="requirement_vault"></a> [vault](#requirement\_vault) | >= 4.0, < 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 0.3, < 4.0 |
-| <a name="provider_vault"></a> [vault](#provider\_vault) | >= 2.0.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0, < 6.0 |
+| <a name="provider_vault"></a> [vault](#provider\_vault) | >= 4.0, < 5.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloudtrail"></a> [cloudtrail](#module\_cloudtrail) | git@github.com:companieshouse/terraform-modules//aws/cloudtrail?ref=tags/1.0.99 |  |
-| <a name="module_config"></a> [config](#module\_config) | git@github.com:companieshouse/terraform-modules//aws/config?ref=tags/1.0.63 |  |
-| <a name="module_heritage_live_chips_backup"></a> [heritage\_live\_chips\_backup](#module\_heritage\_live\_chips\_backup) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_live_chips_backup_policy"></a> [heritage\_live\_chips\_backup\_policy](#module\_heritage\_live\_chips\_backup\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.137 |  |
-| <a name="module_heritage_staging_chips_backup"></a> [heritage\_staging\_chips\_backup](#module\_heritage\_staging\_chips\_backup) | terraform-aws-modules/s3-bucket/aws | 2.11.1 |
-| <a name="module_heritage_staging_chips_backup_policy"></a> [heritage\_staging\_chips\_backup\_policy](#module\_heritage\_staging\_chips\_backup\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy?ref=tags/1.0.137 |  |
-| <a name="module_kms"></a> [kms](#module\_kms) | git@github.com:companieshouse/terraform-modules//aws/kms?ref=tags/1.0.56 |  |
+| <a name="module_cloudtrail"></a> [cloudtrail](#module\_cloudtrail) | git@github.com:companieshouse/terraform-modules//aws/cloudtrail | tags/1.0.267 |
+| <a name="module_cloudtrail_cis_alerting"></a> [cloudtrail\_cis\_alerting](#module\_cloudtrail\_cis\_alerting) | git@github.com:companieshouse/terraform-modules//aws/cloudtrail_cis_alerting | tags/1.0.267 |
+| <a name="module_config"></a> [config](#module\_config) | git@github.com:companieshouse/terraform-modules//aws/config | tags/1.0.267 |
+| <a name="module_heritage_live_chips_backup"></a> [heritage\_live\_chips\_backup](#module\_heritage\_live\_chips\_backup) | terraform-aws-modules/s3-bucket/aws | 4.0.1 |
+| <a name="module_heritage_live_chips_backup_policy"></a> [heritage\_live\_chips\_backup\_policy](#module\_heritage\_live\_chips\_backup\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy | tags/1.0.267 |
+| <a name="module_heritage_staging_chips_backup"></a> [heritage\_staging\_chips\_backup](#module\_heritage\_staging\_chips\_backup) | terraform-aws-modules/s3-bucket/aws | 4.0.1 |
+| <a name="module_heritage_staging_chips_backup_policy"></a> [heritage\_staging\_chips\_backup\_policy](#module\_heritage\_staging\_chips\_backup\_policy) | git@github.com:companieshouse/terraform-modules//aws/s3_cross_account_policy | tags/1.0.267 |
+| <a name="module_iam_password_policy"></a> [iam\_password\_policy](#module\_iam\_password\_policy) | git@github.com:companieshouse/terraform-modules//aws/iam_password_policy | tags/1.0.267 |
+| <a name="module_kms"></a> [kms](#module\_kms) | git@github.com:companieshouse/terraform-modules//aws/kms | tags/1.0.267 |
 
 ## Resources
 
