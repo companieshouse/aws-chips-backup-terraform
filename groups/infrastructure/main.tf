@@ -2,16 +2,16 @@
 # Providers
 # ------------------------------------------------------------------------------
 terraform {
-  required_version = ">= 0.13.0, < 0.14"
+  required_version = ">= 1.3, < 2.0"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 0.3, < 4.0"
+      version = ">= 5.0, < 6.0"
     }
     vault = {
       source  = "hashicorp/vault"
-      version = ">= 2.0.0"
+      version = ">= 4.0, < 5.0"
     }
   }
   backend "s3" {}
@@ -33,18 +33,16 @@ provider "vault" {
 ####################################################################################################
 ## IAM Password Policy
 ####################################################################################################
-
 module "iam_password_policy" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/iam_password_policy?ref=tags/1.0.247"
+  source = "git@github.com:companieshouse/terraform-modules//aws/iam_password_policy?ref=tags/1.0.267"
 }
 
 ####################################################################################################
 ## CloudTrail CIS alerting
 ## Configures an SNS Topic and a number of metric filters and alarms to alert on specific changes.
 ####################################################################################################
-
 module "cloudtrail_cis_alerting" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/cloudtrail_cis_alerting?ref=tags/1.0.257"
+  source = "git@github.com:companieshouse/terraform-modules//aws/cloudtrail_cis_alerting?ref=tags/1.0.267"
 
   aws_profile    = "${var.aws_account}-${var.aws_region}"
   account        = var.account
