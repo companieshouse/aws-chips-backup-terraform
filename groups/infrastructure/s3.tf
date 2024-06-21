@@ -8,7 +8,6 @@ module "heritage_staging_chips_backup" {
   for_each = toset(local.db_names)
 
   bucket = "hstg-${each.value}-backup-${var.aws_account}-${var.aws_region}"
-  acl    = "private"
 
   block_public_acls       = true
   block_public_policy     = true
@@ -138,7 +137,6 @@ module "heritage_live_chips_backup" {
   for_each = toset(local.db_names)
 
   bucket = "hlive-${each.value}-backup-${var.aws_account}-${var.aws_region}"
-  acl    = "private"
 
   block_public_acls       = true
   block_public_policy     = true
